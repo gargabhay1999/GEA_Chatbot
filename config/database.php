@@ -8,7 +8,7 @@
     //on 000webhost
     $DB_SERVER="localhost";
     $DB_USER="id5360241_gea_abhay";
-    $DB_PASS="Enter your password here";
+    $DB_PASS="Amit@\$cps12";
     $DB_NAME="id5360241_gea";
 
     //Create a database connection

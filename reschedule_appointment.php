@@ -2,13 +2,22 @@
 // function to geocode address, it will return false if unable to geocode address
 include_once 'config/database.php';
 
-$url = "https://presecure1.000webhostapp.com/validate_model_serial_num.php?model_num=AEE24DT&serial_num=ACZN9002";
+$url = "https://presecure1.000webhostapp.com/reschedule_appointment.php?model_num=AEE24DT&serial_num=ACZN9002";
 
 if( $_GET["tracking_num"]  &&  $_GET["day"]  && $_GET["start_time"]  && $_GET["end_time"]) {
     $tracking_num = $_GET["tracking_num"];
-    $day = $_GET["day"];
-    $start_time = $_GET["start_time"];
-    $end_time = $_GET["end_time"];
+    $day = trim($_GET["day"]);
+    $start_time = trim($_GET["start_time"]);
+    $end_time = trim($_GET["end_time"]);
+
+    $sql = "SELECT * FROM technicians WHERE day = '$day' AND start_time = '$start_time' AND end_time = '$end_time'";
+    // echo $sql;
+    $result = mysqli_query($connection, $sql);
+    if(mysqli_num_rows($result)>0){
+        while($row = mysqli_fetch_assoc($result)){
+            $technician_id = $row['technician_id'];
+        }
+    }
 
     $table_name = 'appointment_slots';
     $sql = "SELECT cancelled, status  FROM $table_name WHERE tracking_num='$tracking_num'";
@@ -27,7 +36,7 @@ if( $_GET["tracking_num"]  &&  $_GET["day"]  && $_GET["start_time"]  && $_GET["e
     }
 
     if($flag==0){
-        $sql = "UPDATE $table_name SET `rescheduled_count`=rescheduled_count+1, day = '$day', start_time = '$start_time', end_time = '$end_time' WHERE tracking_num='$tracking_num'";
+        $sql = "UPDATE $table_name SET `technician_id` = $technician_id, `rescheduled_count`=rescheduled_count+1, day = '$day', start_time = '$start_time', end_time = '$end_time' WHERE tracking_num='$tracking_num'";
         //echo $sql."\n";
         $result = mysqli_query($connection, $sql);
 
