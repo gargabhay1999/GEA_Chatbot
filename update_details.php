@@ -1,8 +1,5 @@
 <?php 
-// function to geocode address, it will return false if unable to geocode address
 include_once 'config/database.php';
-
-$url = "https://presecure1.000webhostapp.com/validate_model_serial_num.php?model_num=AEE24DT&serial_num=ACZN9002";
 
 if( $_GET["model_num"] && $_GET["serial_num"] && $_GET["issue"] && $_GET["name"] && $_GET["email"] && $_GET["phone"] && $_GET["zipcode"]) {
     $model_num = $_GET["model_num"]; 
@@ -27,6 +24,5 @@ if( $_GET["model_num"] && $_GET["serial_num"] && $_GET["issue"] && $_GET["name"]
     exit();
 }
 
-//AEE24DT ACZN9002 AC is not working  Abhay gargabhay1999@gmail.com 9790726927 600127
 ?> 
 
