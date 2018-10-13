@@ -1,8 +1,5 @@
 <?php 
-// function to geocode address, it will return false if unable to geocode address
 include_once 'config/database.php';
-
-$url = "https://presecure1.000webhostapp.com/validate_model_serial_num.php?model_num=AEE24DT&serial_num=ACZN9002";
 
 if( $_GET["tracking_num"]  &&  $_GET["cancellation_reason"]) {
     $tracking_num = $_GET["tracking_num"];
