@@ -1,8 +1,5 @@
 <?php 
-// function to geocode address, it will return false if unable to geocode address
 include_once 'config/database.php';
-
-$url = "https://presecure1.000webhostapp.com/available_slots_technicians.php?zipcode=600127";
 
 if( $_GET["zipcode"]) {
     $zipcode = $_GET["zipcode"];
