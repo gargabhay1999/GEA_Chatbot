@@ -1,8 +1,5 @@
 <?php 
-// function to geocode address, it will return false if unable to geocode address
 include_once 'config/database.php';
-
-$url = "https://presecure1.000webhostapp.com/available_slots_technicians.php?tracking_num='+tracking_num";
 
 if( $_GET["tracking_num"]) {
     $tracking_num = $_GET["tracking_num"];
@@ -40,6 +37,5 @@ if( $_GET["tracking_num"]) {
     echo $jsonformat=json_encode($technician_details);
     exit();
 }
-//PVM9179SKSS MOOP6664
 
 ?>
