@@ -1,9 +1,6 @@
 <?php 
 header('Access-Control-Allow-Origin: *');  
-// function to geocode address, it will return false if unable to geocode address
 include_once 'config/database.php';
-
-$url = "https://presecure1.000webhostapp.com/validate_tracking_num.php?tracking_num='+tracking_num";
 
 if( $_GET["tracking_num"]) {
     $tracking_num = $_GET["tracking_num"];
