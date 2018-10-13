@@ -1,8 +1,5 @@
 <?php 
-// function to geocode address, it will return false if unable to geocode address
 include_once 'config/database.php';
-
-$url = "https://presecure1.000webhostapp.com/show_status.php?tracking_num=12345";
 
 if( $_GET["tracking_num"]) {
     $tracking_num = $_GET["tracking_num"];
@@ -23,6 +20,5 @@ if( $_GET["tracking_num"]) {
     exit();
 }
 
-//AEE24DT ACZN9002 AC is not working  Abhay gargabhay1999@gmail.com 9790726927 600127
 ?> 
 
