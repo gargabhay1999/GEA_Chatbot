@@ -10,5 +10,4 @@ if( $_GET["feedback"] &&  $_GET["tracking_num"]) {
     $result = mysqli_query($connection, $sql);
     exit();
 }
-//AEE24DT ACZN9002 AC is not working  Abhay gargabhay1999@gmail.com 9790726927 600127
 ?> 
