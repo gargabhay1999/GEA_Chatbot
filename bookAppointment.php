@@ -1,8 +1,5 @@
 <?php 
-// function to geocode address, it will return false if unable to geocode address
 include_once 'config/database.php';
-
-$url = "https://presecure1.000webhostapp.com/bookAppointment.php?model_num='+model_num+'serial_num='+serial_num+'&issue='+issue+'&name='+name+'&email='+email+'&phone='+phone+'&address='+address+'&zipcode='+zipcode+'&day='+day+'&start_time='+start_time+'&end_time='+end_time+'&tracking_num='+tracking_num";
 
 if( $_GET["model_num"] && $_GET["serial_num"] && $_GET["issue"] && $_GET["name"] && $_GET["email"] && $_GET["phone"] && $_GET["address"] && $_GET["zipcode"] && $_GET["day"] && $_GET["start_time"] && $_GET["end_time"] && $_GET["tracking_num"] ) {
     $model_num = $_GET["model_num"];
