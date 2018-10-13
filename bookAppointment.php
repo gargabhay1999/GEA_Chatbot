@@ -34,5 +34,4 @@ if( $_GET["model_num"] && $_GET["serial_num"] && $_GET["issue"] && $_GET["name"]
     exit();
 }
 
-//AEE24DT ACZN9002 AC is not working  Abhay gargabhay1999@gmail.com 9790726927 600127
 ?> 
