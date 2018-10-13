@@ -1,8 +1,5 @@
 <?php 
-// function to geocode address, it will return false if unable to geocode address
 include_once 'config/database.php';
-
-$url = "https://presecure1.000webhostapp.com/feedback.php?feedback=someFeedback&tracking_num=124563";
 
 if( $_GET["feedback"] &&  $_GET["tracking_num"]) {
     $feedback = $_GET["feedback"];
