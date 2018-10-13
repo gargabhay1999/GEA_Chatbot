@@ -45,5 +45,4 @@ if( $_GET["tracking_num"]) {
     echo $jsonformat=json_encode($technician_details);
     exit();
 }
-//PVM9179SKSS MOOP6664
 ?>
