@@ -1,10 +1,6 @@
 <?php 
-// function to geocode address, it will return false if unable to geocode address
 include_once '../config/database.php';
 
-$url = "https://presecure1.000webhostapp.com/technician/update_technician_slots.php?dayID='+dayID+'&shiftId='+shiftId+'&status='+status+'&technician_id='+technician_id";
-
-https://presecure1.000webhostapp.com/technicians/update_technician_slots.php?dayID=0&shiftId=0&status=true&technician_id=81652
 if( $_GET["dayID"] && $_GET["shiftId"] && $_GET["status"] && $_GET["technician_id"]) {
     $dayID = $_GET["dayID"];
     $shiftId = $_GET["shiftId"];
@@ -76,16 +72,16 @@ if( $_GET["dayID"] && $_GET["shiftId"] && $_GET["status"] && $_GET["technician_i
     if($status == true){
         for($i=0;$i<sizeof($zipcode_arr);$i=$i+1){
             $sql = "INSERT INTO $technicians (`technician_id`, `technician_name`, `zipcode`, `mobile_num`, `day`, `start_time`, `end_time`) VALUES('$technician_id', '$technician_name', '$zipcode_arr[$i]', '$mobile_num', '$day', '$start_time', '$end_time') ON DUPLICATE KEY UPDATE technician_id = '$technician_id', technician_name = '$technician_name', zipcode = '$zipcode_arr[$i]', mobile_num = '$mobile_num', day = '$day', start_time = '$start_time', end_time = '$end_time'";
-            echo $sql."\n\n";
-            // $result = mysqli_query($connection, $sql);
+            //echo $sql."\n\n";
+            $result = mysqli_query($connection, $sql);
         }
     }
     
     if($status == false){
         for($i=0;$i<sizeof($zipcode_arr);$i=$i+1){
             $sql = "DELETE FROM technicians WHERE technician_id = '$technician_id' AND day = '$day' AND start_time = '$start_time'AND end_time = '$end_time'";
-            echo $sql."\n\n";
-            // $result = mysqli_query($connection, $sql);
+            //echo $sql."\n\n";
+            $result = mysqli_query($connection, $sql);
         }
     }
     exit();
