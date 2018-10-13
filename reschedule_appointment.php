@@ -1,8 +1,5 @@
 <?php 
-// function to geocode address, it will return false if unable to geocode address
 include_once 'config/database.php';
-
-$url = "https://presecure1.000webhostapp.com/reschedule_appointment.php?model_num=AEE24DT&serial_num=ACZN9002";
 
 if( $_GET["tracking_num"]  &&  $_GET["day"]  && $_GET["start_time"]  && $_GET["end_time"]) {
     $tracking_num = $_GET["tracking_num"];
@@ -55,5 +52,4 @@ if( $_GET["tracking_num"]  &&  $_GET["day"]  && $_GET["start_time"]  && $_GET["e
     echo $jsonformat=json_encode($applianceDetails);
     exit();
 }
-//AEE24DT ACZN9002 AC is not working  Abhay gargabhay1999@gmail.com 9790726927 600127
 ?> 
