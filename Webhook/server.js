@@ -231,15 +231,14 @@ app.post('/', function(req, res, next) {
     }
     user_otp = assistant.getArgument('otp');
     if(phone!=null && user_otp == null){
-      //gea_otp = 5467;
       gea_otp = Math.floor(Math.random()*9000) + 1000;
       var message = gea_otp + ' is your GE Appliance phone verification OTP. Use this OTP to book the appointment.' 
-      let requestURL = "http://my.msgwow.com/api/sendhttp.php?authkey=241564AZZTEb7xn0uI5bb9df82&mobiles="+phone+"&message="+encodeURI(message)+"&sender=IGEAPP&route=4";
+      let requestURL = "http://my.msgwow.com/api/sendhttp.php?authkey=AUTHORIZATION_KEY&mobiles="+phone+"&message="+encodeURI(message)+"&sender=IGEAPP&route=4";
       console.log(requestURL);
       request(requestURL, function(error, response) {
         if(error) {
           next(error);
-        } else { //241336ABljjrG15bb809c9
+        } else {
           console.log("OTP has been delivered successfully");
         }
       });
