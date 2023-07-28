@@ -9,3 +9,4 @@ GEA Hackathon'18
 6. For testing purpose, I am providing credentials here... username: 81652, password: test_password
 7. The technician can manage their profile through the link http://angular-gea-bot-abhay.s3-website-ap-southeast-2.amazonaws.com
 8. Third folder (named APIs) contains all the APIs which have been used to build the wholeproject.
+9. Watch the demo using this link : https://youtu.be/lgQv0hDPP64
